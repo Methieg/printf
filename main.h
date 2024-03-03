@@ -6,3 +6,4 @@ void write_float(va_list *args);
 #include <stdarg.h>
 #include <unistd.h>
 #include <limits.h>
+#include <string.h>
