@@ -8,8 +8,12 @@
 void write_float(va_list *args)
 {
     int i;
+    double fractional;
+    char digit;
 
     double f = va_arg(*args, double);
+
+    
 
     if (f < 0)
     {
@@ -19,15 +23,15 @@ void write_float(va_list *args)
     write_number((unsigned long)f, 10);
     write(1, ".", 1);
 
-    double fractional;
+   
 
     fractional = f - (unsigned long)f;
 
     for (i = 0; i < 6; i++)
     {
         fractional *= 10;
+
         
-        char digit;
 
         digit = '0' + (int)fractional;
         write(1, &digit, 1);
